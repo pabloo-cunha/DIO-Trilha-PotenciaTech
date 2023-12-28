@@ -1,6 +1,6 @@
 saldo = 0
 saque_diario = 0
-extrato = []
+extrato_bancario = []
 
 def depositar():
     global saldo
@@ -8,7 +8,7 @@ def depositar():
     descricao = input('descricao: ')
     if valor > 0:
         saldo += valor
-        extrato.append(f'''
+        extrato_bancario.append(f'''
                        deposito: {valor}
                        descrição: {descricao}
                        ''')
@@ -25,7 +25,7 @@ def sacar():
             descricao = str(input('descrição: '))
             saldo -= valor
             saque_diario +=1
-            extrato.append(f'''
+            extrato_bancario.append(f'''
                        saque: {valor}
                        descrição: {descricao}
                        ''')
@@ -36,7 +36,7 @@ def sacar():
     
 
 def extrair_extrato():
-    print(extrato)
+    print(extrato_bancario)
 
 
 
@@ -58,10 +58,10 @@ while True:
     elif op == 2:
         sacar()
     elif op == 3:
-        if len(extrato) == 0:
+        if len(extrato_bancario) == 0:
             print('sem movimentacao')
         else:
-            for x in extrato:
+            for x in extrato_bancario:
                 print(x)
             
     elif op == 4:
