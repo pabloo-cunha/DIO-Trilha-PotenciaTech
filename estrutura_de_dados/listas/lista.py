@@ -39,3 +39,9 @@ palavras.sort(key=lambda x: len(x)) #organizando pela quantidade de caracteres i
 print(palavras)
 
 print(sorted(numeros)) #mesmo resultado de numeros.sort()
+
+#listas também pode agrupar listas.
+
+matriz = [
+    [0,0,0],[],[]
+]
